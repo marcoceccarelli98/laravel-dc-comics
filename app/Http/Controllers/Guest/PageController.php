@@ -10,54 +10,11 @@ class PageController extends Controller
 {
     public function index()
     {
-        $menu = [
-            [
-                'title' => 'Characters',
-                'link' => '' //route('characters')
-            ],
-            [
-                'title' => 'Comics',
-                'link' => '' //route('comics')
-            ],
-            [
-                'title' => 'Movies',
-                'link' => '' //route('movies')
-            ],
-            [
-                'title' => 'Tv',
-                'link' => '' //route('tv')
-            ],
-            [
-                'title' => 'Games',
-                'link' => '' //route('games')
-            ],
-            [
-                'title' => 'Collectibles',
-                'link' => '' //route('collectibles')
-            ],
-            [
-                'title' => 'Videos',
-                'link' => '' //route('videos')
-            ],
-            [
-                'title' => 'Fans',
-                'link' => '' //route('fans')
-            ],
-            [
-                'title' => 'News',
-                'link' => '' //route('news')
-            ],
-            [
-                'title' => 'Shop',
-                'link' => '' //route('shop')
-            ],
-        ];
+        return view('home');
+    }
 
-        $data = [
-            'comics' => Comic::all(),
-            'menu' => $menu
-        ];
-
-        return view('home', compact('data'));
+    public function comics()
+    {
+        return view('comics');
     }
 }

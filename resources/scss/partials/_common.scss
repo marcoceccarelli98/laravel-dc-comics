@@ -12,11 +12,12 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(50, 50, 50);
 }
 
 main {
     padding-top: 150px;
-    background-color: rgb(50, 50, 50);
+    padding-bottom: 100px;
 }
 
 /* ----- HEADER ----- */
@@ -71,6 +72,10 @@ header {
 /* ----- FOOTER ----- */
 
 footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-color: #1a1a1a;
     color: white;
     padding: 20px;

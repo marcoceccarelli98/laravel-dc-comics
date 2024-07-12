@@ -54,7 +54,6 @@ class PageController extends Controller
         ];
 
         $data = [
-            //'comics' => config('comics'),
             'comics' => Comic::all(),
             'menu' => $menu
         ];

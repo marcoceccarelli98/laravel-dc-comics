@@ -16,23 +16,7 @@ body {
 
 main {
     padding-top: 150px;
-}
-
-/* POSITION */
-.left-0 {
-    left: 0px;
-}
-
-.right-210 {
-    right: 210px;
-}
-
-.top-10 {
-    top: 10px;
-}
-
-.top-490 {
-    top: 490px;
+    background-color: rgb(50, 50, 50);
 }
 
 /* ----- HEADER ----- */
@@ -58,7 +42,7 @@ header {
 }
 
 .logo {
-    width: 100px;
+    width: 200px;
 }
 
 .container-icon {
@@ -72,6 +56,16 @@ header {
     margin: 0px 5px;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(138deg)
         brightness(102%) contrast(101%);
+}
+
+//----- MAIN -----
+
+.comics-list {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
 /* ----- FOOTER ----- */

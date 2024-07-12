@@ -1,86 +1,28 @@
 @import "./variables";
 
-.card-content {
-    .hover-pic {
-        display: none;
-    }
-
-    &:hover {
-        .main-pic {
-            display: none;
-        }
-        .hover-pic {
-            display: inline-block;
-        }
-    }
-
-    .img-content {
-        position: relative;
+.comic-card {
+    width: 300px;
+    word-wrap: break-word;
+    .thumb-container {
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        background-color: green;
+        display: flex;
+        // justify-content: center;
+        align-items: start;
         img {
+            object-fit: cover;
             width: 100%;
+            text-align: center;
         }
     }
-
-    /* ----- TEXT ----- */
-    .text {
-        padding-bottom: 5px;
-    }
-
-    .brand {
-        font-size: 15px;
-    }
-
-    .item {
-        font-weight: 600;
-    }
-
-    .price {
-        font-size: 15px;
-        font-weight: 600;
-        color: $text-price;
-    }
-
-    .discount-txt {
-        font-size: 15px;
-        font-weight: 400;
-        color: $text-discounted;
-        text-decoration: line-through;
-    }
-
-    .labels {
-        position: absolute;
-        bottom: 30px;
-    }
-
-    .discount-label {
-        font-size: 15px;
-        background-color: $label-discount;
-        color: $text-discount;
-        font-weight: 600;
-        padding: 5px 12px;
-        margin-right: 5px;
-    }
-
-    .sus-label {
-        font-size: 15px;
-        background-color: $label-sustainability;
-        color: $text-sustainability;
-        font-weight: 600;
-        padding: 5px 10px;
-    }
-
-    .hearts-label {
-        position: absolute;
-        background-color: $label-hearts;
-        padding: 2px 10px;
-        font-size: 30px;
-        top: 10px;
-        right: 0px;
-        // &.liked {
-        //     color: $text-hearts-hover;
-        // }
-        &:hover {
-            color: $text-hearts-hover;
+    .title-container {
+        padding-bottom: 30px;
+        margin-top: 20px;
+        p {
+            text-transform: uppercase;
+            color: white;
         }
     }
 }

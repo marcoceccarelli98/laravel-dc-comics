@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Guest\PageController;
+use App\Http\Controllers\Admin\ComicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,55 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', [PageController::class, 'index'])->name('home');
 
-    $menu = [
-        [
-            'title' => 'Characters',
-            'link' => '' //route('characters')
-        ],
-        [
-            'title' => 'Comics',
-            'link' => route('comics')
-        ],
-        [
-            'title' => 'Movies',
-            'link' => '' //route('movies')
-        ],
-        [
-            'title' => 'Tv',
-            'link' => '' //route('tv')
-        ],
-        [
-            'title' => 'Games',
-            'link' => '' //route('games')
-        ],
-        [
-            'title' => 'Collectibles',
-            'link' => '' //route('collectibles')
-        ],
-        [
-            'title' => 'Videos',
-            'link' => '' //route('videos')
-        ],
-        [
-            'title' => 'Fans',
-            'link' => '' //route('fans')
-        ],
-        [
-            'title' => 'News',
-            'link' => '' //route('news')
-        ],
-        [
-            'title' => 'Shop',
-            'link' => '' //route('shop')
-        ],
-    ];
-
-    $data = [
-        'comics' => config('comics'),
-        'menu' => $menu
-    ];
-
-    return view('comics', compact('data'));
-})->name('comics');
+Route::resource('comics', ComicController::class);

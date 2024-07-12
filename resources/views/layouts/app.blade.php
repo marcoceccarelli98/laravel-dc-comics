@@ -5,17 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Laravel Template</title>
+    <title>Homepage</title>
     @vite('resources/js/app.js')
 </head>
 
 <body>
-    <h1>
-        Prova
-    </h1>
+    @include('shared.header')
 
-    <img src="{{ Vite::asset('resources/img/duck.jpg') }}" alt="Paperella Laravel Template">
+    <main>
+        <section>
+            @yield('main')
+        </section>
+    </main>
 
+    @include('shared.footer')
 </body>
 
 </html>

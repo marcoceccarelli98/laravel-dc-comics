@@ -1,0 +1,116 @@
+@import "./variables";
+
+[v-cloak] {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    padding-top: 150px;
+}
+
+/* POSITION */
+.left-0 {
+    left: 0px;
+}
+
+.right-210 {
+    right: 210px;
+}
+
+.top-10 {
+    top: 10px;
+}
+
+.top-490 {
+    top: 490px;
+}
+
+/* ----- HEADER ----- */
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: $header-bg-color;
+    z-index: 10;
+    font-weight: 600;
+    box-shadow: 0 2px 1px gray;
+}
+
+.categories {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.categories a {
+    color: black;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.logo {
+    width: 100px;
+}
+
+.container-icon {
+    vertical-align: middle;
+    float: right;
+}
+
+.icon {
+    vertical-align: middle;
+    width: 20px;
+    margin: 0px 5px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(138deg)
+        brightness(102%) contrast(101%);
+}
+
+/* ----- FOOTER ----- */
+
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px;
+}
+
+.info {
+    vertical-align: middle;
+    padding: 20px 10px;
+}
+
+.info h3 {
+    padding-bottom: 10px;
+}
+
+.info a {
+    text-decoration: none;
+    line-height: 10px;
+    color: white;
+    font-size: 15px;
+}
+
+.social {
+    padding: 20px;
+    line-height: 10px;
+    float: right;
+}
+
+.social h4 {
+    margin-bottom: 15px;
+}
+
+.social-logo img {
+    width: 35px;
+    padding: 5px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(138deg)
+        brightness(102%) contrast(101%);
+}

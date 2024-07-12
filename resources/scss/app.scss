@@ -1,6 +1,8 @@
 /*resources/scss/app.scss*/
-@import "~bootstrap/scss/bootstrap";
+@use "./partials/variables";
+@use "./partials/common";
+@use "./partials/layout";
+@use "./partials/utility";
+@use "./partials/card";
 
-body {
-    background-color: white;
-}
+// @import "~bootstrap/scss/bootstrap";

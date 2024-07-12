@@ -26,7 +26,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -34,16 +34,42 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $request->validate([
+        //     'title' => 'required|string|max:100',
+        //     'description' => 'required|string',
+        //     'thumb' => 'required|string',
+        //     'price' => 'required|numeric',
+        //     'series' => 'required|string|max:50',
+        //     'sale_date' => 'required|date',
+        //     'type' => 'required|string|max:50',
+        //     'artists' => 'required|array',
+        //     'writers' => 'required|array',
+        // ]);
+
+        Comic::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'thumb' => $request->thumb,
+            'price' => $request->price,
+            'series' => $request->series,
+            'sale_date' => $request->sale_date,
+            'type' => $request->type,
+            'artists' => json_encode($request->artists),
+            'writers' => json_encode($request->writers),
+        ]);
+
+        return redirect()->route('comics.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+
+    public function show(Comic $comic)
     {
-        //
+        return view('comics.show', compact('comic'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

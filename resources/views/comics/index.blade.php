@@ -5,6 +5,9 @@
 
 @section('main')
     <section>
+        <div class="add-comic ">
+            <a href="{{route('comics.create')}}">ADD NEW COMIC</a>
+        </div>
         <div class="comics-list">
             @foreach ($data['comics'] as $comic)
                 <div class="comic-card">

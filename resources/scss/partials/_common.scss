@@ -10,9 +10,11 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(50, 50, 50);
+html {
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(50, 50, 50);
+    }
 }
 
 main {
@@ -29,50 +31,26 @@ header {
     z-index: 10;
     font-weight: 600;
     box-shadow: 0 2px 1px gray;
-}
-
-.categories {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.categories a {
-    color: black;
-    text-decoration: none;
-    margin-right: 10px;
-}
-
-.logo {
-    width: 200px;
-}
-
-.container-icon {
-    vertical-align: middle;
-    float: right;
-}
-
-.icon {
-    vertical-align: middle;
-    width: 20px;
-    margin: 0px 5px;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(138deg)
-        brightness(102%) contrast(101%);
+    .logo {
+        width: 200px;
+    }
 }
 
 //----- MAIN -----
-
-.comics-list {
-    margin-bottom: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+section {
+    .comics-list {
+        margin-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
 }
 
 /* ----- FOOTER ----- */
 
 footer {
-    position: fixed;
+    //position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
@@ -84,32 +62,21 @@ footer {
 .info {
     vertical-align: middle;
     padding: 20px 10px;
-}
 
-.info h3 {
-    padding-bottom: 10px;
-}
+    h3 {
+        padding-bottom: 10px;
+    }
 
-.info a {
-    text-decoration: none;
-    line-height: 10px;
-    color: white;
-    font-size: 15px;
+    a {
+        text-decoration: none;
+        line-height: 10px;
+        color: white;
+        font-size: 15px;
+    }
 }
 
 .social {
     padding: 20px;
     line-height: 10px;
     float: right;
-}
-
-.social h4 {
-    margin-bottom: 15px;
-}
-
-.social-logo img {
-    width: 35px;
-    padding: 5px;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(138deg)
-        brightness(102%) contrast(101%);
 }

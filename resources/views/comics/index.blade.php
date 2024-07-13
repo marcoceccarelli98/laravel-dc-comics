@@ -10,12 +10,14 @@
         <div class="comics-list">
             @foreach ($data['comics'] as $comic)
                 <div class="comic-card">
-                    <div class="thumb-container">
-                        <img src="{{ $comic['thumb'] }}" alt="Thumb not found">
-                    </div>
-                    <div class="title-container">
-                        <p>{{ $comic['series'] }}</p>
-                    </div>
+                    <a href="{{ route('comics.show', $comic->id) }}">
+                        <div class="thumb-container">
+                            <img src="{{ $comic['thumb'] }}" alt="Thumb not found">
+                        </div>
+                        <div class="title-container">
+                            <p>{{ $comic['series'] }}</p>
+                        </div>
+                    </a>
                 </div>
             @endforeach
         </div>

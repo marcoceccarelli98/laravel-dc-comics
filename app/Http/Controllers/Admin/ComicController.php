@@ -54,8 +54,8 @@ class ComicController extends Controller
             'series' => $request->series,
             'sale_date' => $request->sale_date,
             'type' => $request->type,
-            'artists' => json_encode($request->artists),
-            'writers' => json_encode($request->writers),
+            'artists' => $request->artists,
+            'writers' => $request->writers,
         ]);
 
         return redirect()->route('comics.index');

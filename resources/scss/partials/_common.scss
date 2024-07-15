@@ -25,6 +25,7 @@ main {
 /* ----- HEADER ----- */
 
 header {
+    text-transform: uppercase;
     position: fixed;
     width: 100%;
     background-color: $header-bg-color;

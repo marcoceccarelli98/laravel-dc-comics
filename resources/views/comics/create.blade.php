@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Comics - Add New
+@endsection
+
 @section('main')
     <section>
         <div class="container">

@@ -43,7 +43,31 @@
         </div>
         <div class="text-right mt-3">
             <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary mx-2"><i class="fas fa-pen"></i></a>
-            <a class="btn btn-danger"><i class="fas fa-trash-can"></i></a>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger" type="submit">
+                <i class="fas fa-trash-can"></i>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Are u sure u want to delete : {{ $comic->title }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Abort</button>
+                    <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger"
+                            type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

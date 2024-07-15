@@ -7,9 +7,9 @@
 @section('main')
     <section>
         <div class="container">
-            <form class="mt-5" action="{{ route('comics.store') }}" method="POST">
+            <form class="mt-5" action="{{ route('comics.update', $comic->id) }}" method="POST">
                 @csrf
-                @method('PUT');
+                @method('PUT')
                 <div class="text-white form-group">
                     <label for="title">Titolo</label>
                     <input type="text" name="title" id="title" class="form-control" value="{{ $comic->title }}"
@@ -17,7 +17,7 @@
                 </div>
                 <div class="text-white mt-3 form-group">
                     <label for="description">Descrizione</label>
-                    <textarea name="description" id="description" class="form-control" value="{{ $comic->description }}" required></textarea>
+                    <textarea name="description" id="description" class="form-control" required>{{ $comic->description }}</textarea>
                 </div>
                 <div class="text-white mt-3 form-group">
                     <label for="thumb">Thumb</label>

@@ -39,10 +39,11 @@
                     </li>
                     <li class="list-group-item fs-4 fw-semibold bg-primary"><span>Price: {{ $comic->price }}</span></li>
                 </ul>
-                <button><i class="fas fa-pen"></i></button>
-                <button><i class="fas fa-trash-can"></i></button>
-
             </div>
+        </div>
+        <div class="text-right mt-3">
+            <button class="btn btn-primary mx-2"><i class="fas fa-pen"></i></button>
+            <button class="btn btn-danger"><i class="fas fa-trash-can"></i></button>
         </div>
     </div>
 @endsection

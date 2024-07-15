@@ -42,8 +42,8 @@
             </div>
         </div>
         <div class="text-right mt-3">
-            <button class="btn btn-primary mx-2"><i class="fas fa-pen"></i></button>
-            <button class="btn btn-danger"><i class="fas fa-trash-can"></i></button>
+            <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary mx-2"><i class="fas fa-pen"></i></a>
+            <a class="btn btn-danger"><i class="fas fa-trash-can"></i></a>
         </div>
     </div>
 @endsection

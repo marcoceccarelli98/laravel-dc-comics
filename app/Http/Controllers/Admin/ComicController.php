@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use App\Http\Requests\StoreComicRequest;
 
 class ComicController extends Controller
 {
@@ -32,31 +33,13 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
-        // $request->validate([
-        //     'title' => 'required|string|max:100',
-        //     'description' => 'required|string',
-        //     'thumb' => 'required|string',
-        //     'price' => 'required|numeric',
-        //     'series' => 'required|string|max:50',
-        //     'sale_date' => 'required|date',
-        //     'type' => 'required|string|max:50',
-        //     'artists' => 'required|array',
-        //     'writers' => 'required|array',
-        // ]);
 
-        Comic::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'thumb' => $request->thumb,
-            'price' => $request->price,
-            'series' => $request->series,
-            'sale_date' => $request->sale_date,
-            'type' => $request->type,
-            'artists' => $request->artists,
-            'writers' => $request->writers,
-        ]);
+        $data = $request->validated();
+        $data['artists'] = array_map('trim', explode(',', $data['artists']));
+        $data['writers'] = array_map('trim', explode(',', $data['writers']));
+        Comic::create($data);
 
         return redirect()->route('comics.index');
     }

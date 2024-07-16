@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreComicRequest extends FormRequest
+class UpdateComicRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,24 +21,19 @@ class StoreComicRequest extends FormRequest
      */
     public function rules(): array
     {
+        // Get comic ID of actual root
+        $comicId = $this->route('comic');
+
         return [
-            'title' => 'required|string|unique:comics,title',
+            'title' => 'required|string|max:100|unique:comics,title,' . $comicId,
             'description' => 'required|string',
             'thumb' => 'required|string',
-            'price' => 'required|numeric|max:9999999',
+            'price' => 'required|numeric',
             'series' => 'required|string|max:50',
-            'sale_date' => 'required|date|after:1934-1-1',
+            'sale_date' => 'required|date|after_or_equal:2020-01-01',
             'type' => 'required|string|max:50',
             'artists' => 'required|string',
             'writers' => 'required|string',
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'title.unique' => 'Il titolo è già esistente.',
-            'sale_date.after_or_equal' => 'La data di vendita deve essere una data successiva o uguale a :date.',
         ];
     }
 }

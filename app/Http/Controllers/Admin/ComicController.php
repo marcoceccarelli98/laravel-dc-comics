@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Comic;
 use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 
 class ComicController extends Controller
 {
@@ -65,14 +66,24 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $comic)
+    // public function update(Request $request, Comic $comic)
+    // {
+    //     // $data = $request->all();
+    //     // $comic->update($data);
+    //     // return redirect()->route('comics.show', $comic->id);
+    // }
+
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $data = $request->all();
+        $data = $request->validated();
+        $data['artists'] = array_map('trim', explode(',', $data['artists']));
+        $data['writers'] = array_map('trim', explode(',', $data['writers']));
 
         $comic->update($data);
 
-        return redirect()->route('comics.show', $comic->id);
+        return redirect()->route('comics.index');
     }
+
 
     /**
      * Remove the specified resource from storage.

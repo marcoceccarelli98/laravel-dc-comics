@@ -7,6 +7,15 @@
 @section('main')
     <section>
         <div class="container">
+            @if ($errors->any())
+                <div class="mt-5 alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form class="mt-5" action="{{ route('comics.update', $comic->id) }}" method="POST">
                 @csrf
                 @method('PUT')

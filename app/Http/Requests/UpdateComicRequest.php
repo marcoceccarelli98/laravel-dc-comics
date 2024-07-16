@@ -21,11 +21,8 @@ class UpdateComicRequest extends FormRequest
      */
     public function rules(): array
     {
-        // Get comic ID of actual root
-        $comicId = $this->route('comic');
-
         return [
-            'title' => 'required|string|max:100|unique:comics,title,' . $comicId,
+            'title' => 'required|string|max:100|unique:comics,title,' . $this->comic->id,
             'description' => 'required|string',
             'thumb' => 'required|string',
             'price' => 'required|numeric',

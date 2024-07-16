@@ -55,12 +55,12 @@
                 </div>
                 <div class="text-white mt-3 form-group">
                     <label for="artists">Artisti (separati da virgola)</label>
-                    <input type="text" name="artists[]" id="artists" class="form-control"
+                    <input type="text" name="artists" id="artists" class="form-control"
                         value="{{ implode(',', $comic->artists) }}" required>
                 </div>
                 <div class="text-white mt-3 form-group">
                     <label for="writers">Scrittori (separati da virgola)</label>
-                    <input type="text" name="writers[]" id="writers" class="form-control"
+                    <input type="text" name="writers" id="writers" class="form-control"
                         value="{{ implode(',', $comic->writers) }}" required>
                 </div>
                 <button type="submit" class="btn btn-primary mt-3">Update Comic</button>
